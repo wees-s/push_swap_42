@@ -6,7 +6,7 @@
 /*   By: wedos-sa <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/03 13:44:24 by wedos-sa          #+#    #+#             */
-/*   Updated: 2025/09/05 12:20:03 by wedos-sa         ###   ########.fr       */
+/*   Updated: 2025/09/05 18:59:04 by wedos-sa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,12 +31,14 @@ long int			insert_elem_checker(char *string, char **arr_arr, size_t j);
 /*void type*/
 void				ft_list_push_back_int(t_stack_node **begin_list, int data);
 void				free_split(char **arr_arr);
-void				ft_list_pointer_head(t_stack_node **begin_list);
 void				free_stack(t_stack_node *stack);
 
 /*struct type*/
 t_stack_node		*start_stack_a(char **stack);
 t_stack_node		*ft_list_last_int(t_stack_node *begin_list);
 t_stack_node		*ft_create_elem_int(int nb);
+
+/*swap functions*/
+void	sa(t_stack_node	**stack_a);
 
 #endif

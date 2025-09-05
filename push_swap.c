@@ -6,7 +6,7 @@
 /*   By: wedos-sa <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/03 14:37:19 by wedos-sa          #+#    #+#             */
-/*   Updated: 2025/09/05 13:51:14 by wedos-sa         ###   ########.fr       */
+/*   Updated: 2025/09/05 18:56:55 by wedos-sa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -113,7 +113,8 @@ int	main(int argc, char **argv)
 	{
 		stack_a = start_stack_a(stack);
 		head = stack_a;
-		while (stack_a -> next != NULL)
+		sa(&stack_a);
+		while (stack_a != NULL)
 		{
 			ft_printf("Valor: %d\n", (int)stack_a->num);
 			stack_a = stack_a->next;
