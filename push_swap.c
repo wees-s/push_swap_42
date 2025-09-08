@@ -6,7 +6,7 @@
 /*   By: wedos-sa <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/03 14:37:19 by wedos-sa          #+#    #+#             */
-/*   Updated: 2025/09/05 18:56:55 by wedos-sa         ###   ########.fr       */
+/*   Updated: 2025/09/08 19:07:59 by wedos-sa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -104,8 +104,10 @@ int	main(int argc, char **argv)
 {
 	char			**stack;
 	t_stack_node	*stack_a;
+	t_stack_node	*stack_b;
 	t_stack_node	*head;
 
+	stack_b = NULL;
 	stack = inicial_checker(argc, argv);
 	if (stack == NULL)
 		return (0);
@@ -114,11 +116,27 @@ int	main(int argc, char **argv)
 		stack_a = start_stack_a(stack);
 		head = stack_a;
 		sa(&stack_a);
+		pb(&stack_a, &stack_b);
+		ft_printf("primeiro prev de b: %p\n", stack_b->prev);
+		pb(&stack_a, &stack_b);
+		pb(&stack_a, &stack_b);
+		pb(&stack_a, &stack_b);
+		ft_printf("stack_b item = %d\n", (int)stack_b->num);
+		stack_b = stack_b->next;
+		ft_printf("stack_b item = %d\n", (int)stack_b->num);
+		stack_b = stack_b->next;
+		ft_printf("stack_b item = %d\n", (int)stack_b->num);
+		stack_b = stack_b->next;
+		ft_printf("stack_b item = %d\n", (int)stack_b->num);
+		ft_printf("\n\n\n");
+		head = stack_a;
 		while (stack_a != NULL)
 		{
-			ft_printf("Valor: %d\n", (int)stack_a->num);
+			ft_printf("stack_a item: %d\n", (int)stack_a->num);
 			stack_a = stack_a->next;
 		}
+		ft_printf("Primeiro prev: %p\n", head -> prev);
+		ft_printf("Útlimo prev: %d\n", ft_list_last_int(head) -> prev -> num);
 		ft_printf("Está dando certo");
 	}
 	free_stack(head);
