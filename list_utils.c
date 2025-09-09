@@ -6,7 +6,7 @@
 /*   By: wedos-sa <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/04 14:56:26 by wedos-sa          #+#    #+#             */
-/*   Updated: 2025/09/08 11:32:13 by wedos-sa         ###   ########.fr       */
+/*   Updated: 2025/09/09 14:42:59 by wedos-sa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,4 +73,19 @@ t_stack_node	*start_stack_a(char **stack)
 		i++;
 	}
 	return (stack_a);
+}
+
+int	ft_list_size_int(t_stack_node *begin_list)
+{
+	int				i;
+	t_stack_node	*index;
+
+	index = begin_list;
+	i = 0;
+	while (index)
+	{
+		i++;
+		index = index -> next;
+	}
+	return (i);
 }

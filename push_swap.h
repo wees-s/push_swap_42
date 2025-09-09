@@ -6,7 +6,7 @@
 /*   By: wedos-sa <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/03 13:44:24 by wedos-sa          #+#    #+#             */
-/*   Updated: 2025/09/09 10:15:48 by wedos-sa         ###   ########.fr       */
+/*   Updated: 2025/09/09 14:37:58 by wedos-sa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,7 @@ typedef struct s_stack_node
 
 /*number type*/
 long int			insert_elem_checker(char *string, char **arr_arr, size_t j);
+int					ft_list_size_int(t_stack_node *begin_list);
 
 /*void type*/
 void				ft_list_push_back_int(t_stack_node **begin_list, int data);
@@ -47,5 +48,13 @@ void				pb(t_stack_node **begin_list_a,
 void				pa(t_stack_node **begin_list_b,
 						t_stack_node **begin_list_a);
 void				push(t_stack_node **from, t_stack_node **to);
+void				rotate(t_stack_node **begin_list);
+void				ra(t_stack_node **stack_a);
+void				rb(t_stack_node **stack_b);
+void				rr(t_stack_node **stack_a, t_stack_node **stack_b);
+void				reverse_rotate(t_stack_node **begin_list);
+void				rra(t_stack_node **stack_a);
+void				rrb(t_stack_node **stack_b);
+void				rrr(t_stack_node **stack_a, t_stack_node **stack_b);
 
 #endif
