@@ -6,7 +6,7 @@
 /*   By: wedos-sa <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/04 14:56:26 by wedos-sa          #+#    #+#             */
-/*   Updated: 2025/09/09 14:42:59 by wedos-sa         ###   ########.fr       */
+/*   Updated: 2025/09/09 19:05:16 by wedos-sa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,10 +52,10 @@ void	ft_list_push_back_int(t_stack_node **begin_list, int data)
 
 t_stack_node	*start_stack_a(char **stack)
 {
-	t_stack_node	*stack_a;
-	size_t			i;
-	long int		temp;
-	size_t			j;
+	t_stack_node		*stack_a;
+	size_t				i;
+	long long int		temp;
+	size_t				j;
 
 	stack_a = ft_create_elem_int(ft_atoi(stack[0]));
 	i = 1;

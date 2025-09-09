@@ -6,7 +6,7 @@
 /*   By: wedos-sa <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/03 14:37:19 by wedos-sa          #+#    #+#             */
-/*   Updated: 2025/09/09 15:50:19 by wedos-sa         ###   ########.fr       */
+/*   Updated: 2025/09/09 19:04:49 by wedos-sa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,14 +92,14 @@ static char	**inicial_checker(int argc, char **argv)
 	return (NULL);
 }
 
-long int	insert_elem_checker(char *string, char **arr_arr, size_t j)
+long long int	insert_elem_checker(char *string, char **arr_arr, size_t j)
 {
-	long int		nb;
+	long long int		nb;
 
 	nb = ft_atoi(string);
 	while (arr_arr[j])
 	{
-		if (nb == (long int)ft_atoi(arr_arr[j]))
+		if (nb == ft_atoi(arr_arr[j]))
 			return (LONG_MAX);
 		j++;
 	}
@@ -110,9 +110,9 @@ int	main(int argc, char **argv)
 {
 	char			**stack;
 	t_stack_node	*stack_a;
-	t_stack_node	*stack_b;
+	int				j;
 
-	stack_b = NULL;
+	j = 0;
 	stack = inicial_checker(argc, argv);
 	if (stack == NULL)
 	{
@@ -121,8 +121,16 @@ int	main(int argc, char **argv)
 	}
 	else
 		stack_a = start_stack_a(stack);
+	while (j != argc)
+	{
+		if (argv[j][0] == '\0')
+		{
+			write(2, "Error\n", 6);
+			return (0);
+		}
+		j++;
+	}
 	free_stack(stack_a);
-	free_stack(stack_b);
 	free_split(stack);
 	return (0);
 }

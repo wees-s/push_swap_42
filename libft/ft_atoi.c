@@ -6,17 +6,17 @@
 /*   By: wedos-sa <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/14 17:46:07 by wedos-sa          #+#    #+#             */
-/*   Updated: 2025/09/03 15:51:49 by wedos-sa         ###   ########.fr       */
+/*   Updated: 2025/09/09 17:53:41 by wedos-sa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_atoi(const char *string)
+long long int	ft_atoi(const char *string)
 {
 	int					i;
 	int					sign;
-	unsigned long int	nb;
+	long long int		nb;
 
 	nb = 0;
 	i = 0;
