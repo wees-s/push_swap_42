@@ -6,7 +6,7 @@
 /*   By: wedos-sa <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/03 13:44:24 by wedos-sa          #+#    #+#             */
-/*   Updated: 2025/09/08 17:32:00 by wedos-sa         ###   ########.fr       */
+/*   Updated: 2025/09/09 10:15:48 by wedos-sa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,10 @@ t_stack_node		*ft_create_elem_int(int nb);
 void				sa(t_stack_node	**stack_a);
 void				sb(t_stack_node	**stack_b);
 void				ss(t_stack_node	**stack_a, t_stack_node **stack_b);
-void				pb(t_stack_node **stack_a, t_stack_node **stack_b);
-void				pa(t_stack_node **begin_list_b, t_stack_node **begin_list_a);
+void				pb(t_stack_node **begin_list_a,
+						t_stack_node **begin_list_b);
+void				pa(t_stack_node **begin_list_b,
+						t_stack_node **begin_list_a);
+void				push(t_stack_node **from, t_stack_node **to);
 
 #endif

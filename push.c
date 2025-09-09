@@ -6,47 +6,41 @@
 /*   By: wedos-sa <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/05 15:22:08 by wedos-sa          #+#    #+#             */
-/*   Updated: 2025/09/08 19:13:23 by wedos-sa         ###   ########.fr       */
+/*   Updated: 2025/09/09 10:14:34 by wedos-sa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-//PRECISO ARRUMAR EM UMA FUNÇÃO SÓ PARA SER CHAMADA
-void	pa(t_stack_node **begin_list_b, t_stack_node **begin_list_a)
+
+void	push(t_stack_node **from, t_stack_node **to)
 {
 	t_stack_node	*temp;
 
-	temp = *begin_list_b;
-	(*begin_list_b)->next->prev = NULL;
-	*begin_list_b = (*begin_list_b)->next;
-	if (*begin_list_a == NULL)
+	temp = *from;
+	if ((*from)->next)
+		(*from)->next->prev = NULL;
+	*from = (*from)->next;
+	if (*to == NULL)
 	{
-		*begin_list_a = temp;
-		(*begin_list_a)->next = NULL;
+		*to = temp;
+		(*to)->next = NULL;
 	}
 	else
 	{
-		temp->next = *begin_list_a;
-		*begin_list_a = temp;
+		temp->next = *to;
+		temp->next->prev = temp;
+		*to = temp;
 	}
 }
 
+void	pa(t_stack_node **begin_list_b, t_stack_node **begin_list_a)
+{
+	push(begin_list_b, begin_list_a);
+	ft_printf("pa\n");
+}
 
 void	pb(t_stack_node **begin_list_a, t_stack_node **begin_list_b)
 {
-	t_stack_node	*temp;
-
-	temp = *begin_list_a;
-	(*begin_list_a)->next->prev = NULL;
-	*begin_list_a = (*begin_list_a)->next;
-	if (*begin_list_b == NULL)
-	{
-		*begin_list_b = temp;
-		(*begin_list_b)->next = NULL;
-	}
-	else
-	{
-		temp->next = *begin_list_b;
-		*begin_list_b = temp;
-	}
+	push(begin_list_a, begin_list_b);
+	ft_printf("pb\n");
 }

@@ -6,7 +6,7 @@
 /*   By: wedos-sa <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/03 14:37:19 by wedos-sa          #+#    #+#             */
-/*   Updated: 2025/09/08 19:07:59 by wedos-sa         ###   ########.fr       */
+/*   Updated: 2025/09/09 10:17:59 by wedos-sa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,10 +86,10 @@ static char	**inicial_checker(int argc, char **argv)
 
 long int	insert_elem_checker(char *string, char **arr_arr, size_t j)
 {
-	size_t			i;
+	//size_t			i;
 	long int		nb;
 
-	i = 0;
+	//i = 0;
 	nb = ft_atoi(string);
 	while (arr_arr[j])
 	{
@@ -105,7 +105,7 @@ int	main(int argc, char **argv)
 	char			**stack;
 	t_stack_node	*stack_a;
 	t_stack_node	*stack_b;
-	t_stack_node	*head;
+	//t_stack_node	*head;
 
 	stack_b = NULL;
 	stack = inicial_checker(argc, argv);
@@ -114,32 +114,33 @@ int	main(int argc, char **argv)
 	else
 	{
 		stack_a = start_stack_a(stack);
-		head = stack_a;
+		ft_printf("\n================================\n");
+		ft_printf("\nMOVIMENTOS:\n");
+		pb(&stack_a, &stack_b);
+		pb(&stack_a, &stack_b);
+		pb(&stack_a, &stack_b);
+		pb(&stack_a, &stack_b);
+		pa(&stack_b, &stack_a);
 		sa(&stack_a);
-		pb(&stack_a, &stack_b);
-		ft_printf("primeiro prev de b: %p\n", stack_b->prev);
-		pb(&stack_a, &stack_b);
-		pb(&stack_a, &stack_b);
-		pb(&stack_a, &stack_b);
-		ft_printf("stack_b item = %d\n", (int)stack_b->num);
-		stack_b = stack_b->next;
-		ft_printf("stack_b item = %d\n", (int)stack_b->num);
-		stack_b = stack_b->next;
-		ft_printf("stack_b item = %d\n", (int)stack_b->num);
-		stack_b = stack_b->next;
-		ft_printf("stack_b item = %d\n", (int)stack_b->num);
-		ft_printf("\n\n\n");
-		head = stack_a;
+		pa(&stack_b, &stack_a);
+		ss(&stack_a, &stack_b);
+		ft_printf("\n================================\n");
+		ft_printf("\nSTACK_A\n");
 		while (stack_a != NULL)
 		{
-			ft_printf("stack_a item: %d\n", (int)stack_a->num);
-			stack_a = stack_a->next;
+			ft_printf("\nPOINTER = %p STACK_A NUM: %d\nSTACK_A PREV POINTER: %p\nSTACK_A NEXT POINTER: %p\n", stack_a, (int)stack_a -> num, stack_a -> prev, stack_a -> next);
+			stack_a = stack_a -> next;
 		}
-		ft_printf("Primeiro prev: %p\n", head -> prev);
-		ft_printf("Útlimo prev: %d\n", ft_list_last_int(head) -> prev -> num);
-		ft_printf("Está dando certo");
+		ft_printf("\n================================\n");
+		ft_printf("\nSTACK_B\n");
+		while (stack_b != NULL)
+		{
+			ft_printf("\nPOINTER = %p STACK_B NUM: %d\nSTACK_B PREV POINTER: %p\nSTACK_B NEXT POINTER: %p\n", stack_b, (int)stack_b -> num, stack_b -> prev, stack_b -> next);
+			stack_b = stack_b -> next;
+		}
 	}
-	free_stack(head);
+	free_stack(stack_a);
+	free_stack(stack_b);
 	free_split(stack);
 	return (0);
 }
