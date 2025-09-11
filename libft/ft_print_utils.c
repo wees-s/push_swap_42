@@ -58,7 +58,7 @@ int	ft_unsignednbr_i(unsigned int n)
 	div = 1;
 	while (n / div >= 10)
 		div = div * 10;
-	while (n >= 0 && div != 0)
+	while (n != 0 && div != 0)
 	{
 		c = n / div + 48;
 		count += ft_putchar_i(c);

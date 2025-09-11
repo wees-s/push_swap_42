@@ -23,7 +23,7 @@ int	ft_print_address_i(unsigned long long n)
 	if (!n)
 		return (ft_putstr_i("(nil)"));
 	write(1, "0x", 2);
-	while ((n / div) >= 0 && div <= n / 16)
+	while ((n / div) != 0 && div <= n / 16)
 			div = div * 16;
 	while (div > 0)
 	{

@@ -31,7 +31,7 @@ int	ft_puthex_i_lower(unsigned int n)
 	div = 1;
 	if (n == 0)
 		return (ft_putchar_i('0'));
-	while ((n / div) >= 0 && div <= n / 16)
+	while ((n / div) != 0 && div <= n / 16)
 		div = div * 16;
 	while (div > 0)
 	{
@@ -56,7 +56,7 @@ int	ft_puthex_i_upper(unsigned int n)
 	div = 1;
 	if (n == 0)
 		return (ft_putchar_i('0'));
-	while ((n / div) >= 0 && div <= n / 16)
+	while ((n / div) != 0 && div <= n / 16)
 		div = div * 16;
 	while (div > 0)
 	{

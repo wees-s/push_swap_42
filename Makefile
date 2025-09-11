@@ -10,7 +10,8 @@ SRCS =	push_swap.c 	\
 		swap.c			\
 		push.c			\
 		rotate.c		\
-		reverse_rotate.c
+		reverse_rotate.c	\
+		stack_index.c
 
 OBJS = $(SRCS:.c=.o)
 

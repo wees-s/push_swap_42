@@ -130,6 +130,13 @@ int	main(int argc, char **argv)
 		}
 		j++;
 	}
+	index_list(&stack_a);
+	while(stack_a != NULL)
+	{
+		ft_printf("\nNum = %d  Posição = ", stack_a->num);
+		ft_printf("%d\n", stack_a-> pos);
+		stack_a = stack_a -> next;
+	}
 	free_stack(stack_a);
 	free_split(stack);
 	return (0);

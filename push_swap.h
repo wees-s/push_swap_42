@@ -33,6 +33,7 @@ int					ft_list_size_int(t_stack_node *begin_list);
 void				ft_list_push_back_int(t_stack_node **begin_list, int data);
 void				free_split(char **arr_arr);
 void				free_stack(t_stack_node *stack);
+void				index_list(t_stack_node **stack_a);
 
 /*struct type*/
 t_stack_node		*start_stack_a(char **stack);
