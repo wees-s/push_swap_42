@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   stack_index.c                                      :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: wedos-sa <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/09/11 09:59:51 by wedos-sa          #+#    #+#             */
+/*   Updated: 2025/09/11 11:09:02 by wedos-sa         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include	"push_swap.h"
 
 void	index_list(t_stack_node **stack_a)
@@ -19,7 +31,7 @@ void	index_list(t_stack_node **stack_a)
 				x++;
 			i = i->next;
 		}
-		temp->pos = x;
+		temp->pos = x+1;
 		x = 0;
 		temp = temp->next;
 		i = *stack_a;

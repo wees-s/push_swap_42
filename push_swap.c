@@ -6,7 +6,7 @@
 /*   By: wedos-sa <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/03 14:37:19 by wedos-sa          #+#    #+#             */
-/*   Updated: 2025/09/09 19:04:49 by wedos-sa         ###   ########.fr       */
+/*   Updated: 2025/09/11 13:51:35 by wedos-sa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -111,6 +111,7 @@ int	main(int argc, char **argv)
 	char			**stack;
 	t_stack_node	*stack_a;
 	int				j;
+	t_stack_node	*head;
 
 	j = 0;
 	stack = inicial_checker(argc, argv);
@@ -121,6 +122,7 @@ int	main(int argc, char **argv)
 	}
 	else
 		stack_a = start_stack_a(stack);
+	head = stack_a;
 	while (j != argc)
 	{
 		if (argv[j][0] == '\0')
@@ -131,12 +133,14 @@ int	main(int argc, char **argv)
 		j++;
 	}
 	index_list(&stack_a);
-	while(stack_a != NULL)
-	{
-		ft_printf("\nNum = %d  Posição = ", stack_a->num);
-		ft_printf("%d\n", stack_a-> pos);
-		stack_a = stack_a -> next;
-	}
+//	while(stack_a != NULL)
+//	{
+//		ft_printf("\nNum = %d  Posição = ", stack_a->num);
+//		ft_printf("%d\n", stack_a-> pos);
+//		stack_a = stack_a -> next;
+//	}
+	ft_printf("\n\n=========\n\n");
+	stack_order(&head);
 	free_stack(stack_a);
 	free_split(stack);
 	return (0);

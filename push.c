@@ -6,7 +6,7 @@
 /*   By: wedos-sa <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/05 15:22:08 by wedos-sa          #+#    #+#             */
-/*   Updated: 2025/09/09 10:14:34 by wedos-sa         ###   ########.fr       */
+/*   Updated: 2025/09/11 11:54:43 by wedos-sa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,7 @@ void	push(t_stack_node **from, t_stack_node **to)
 	{
 		temp->next = *to;
 		temp->next->prev = temp;
+		temp->prev = NULL;
 		*to = temp;
 	}
 }
