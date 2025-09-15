@@ -6,7 +6,7 @@
 /*   By: wedos-sa <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/03 14:37:19 by wedos-sa          #+#    #+#             */
-/*   Updated: 2025/09/11 13:51:35 by wedos-sa         ###   ########.fr       */
+/*   Updated: 2025/09/15 17:27:18 by wedos-sa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -139,7 +139,6 @@ int	main(int argc, char **argv)
 //		ft_printf("%d\n", stack_a-> pos);
 //		stack_a = stack_a -> next;
 //	}
-	ft_printf("\n\n=========\n\n");
 	stack_order(&head);
 	free_stack(stack_a);
 	free_split(stack);
