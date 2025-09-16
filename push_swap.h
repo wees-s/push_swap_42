@@ -6,7 +6,7 @@
 /*   By: wedos-sa <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/03 13:44:24 by wedos-sa          #+#    #+#             */
-/*   Updated: 2025/09/15 12:42:04 by wedos-sa         ###   ########.fr       */
+/*   Updated: 2025/09/16 17:31:24 by wedos-sa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,8 +36,9 @@ void				free_stack(t_stack_node *stack);
 void				index_list(t_stack_node **stack_a);
 void				stack_order(t_stack_node **stack_a);
 void				stack_a_organizer(t_stack_node **stack_a);
-int					stack_to_a(t_stack_node **stack_a, t_stack_node **stack_b, int small_pos);
-void				stack_to_b(t_stack_node **stack_a);
+void				stack_to_a(t_stack_node **stack_a, t_stack_node **stack_b);
+t_stack_node		*stack_to_b(t_stack_node **stack_a, int	size_list);
+void				rotate_and_push(t_stack_node **stack_b, t_stack_node **stack_a, int pos);
 
 /*struct type*/
 t_stack_node		*start_stack_a(char **stack);
