@@ -6,7 +6,7 @@
 /*   By: wedos-sa <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/11 09:59:51 by wedos-sa          #+#    #+#             */
-/*   Updated: 2025/09/11 11:09:02 by wedos-sa         ###   ########.fr       */
+/*   Updated: 2025/09/16 17:43:22 by wedos-sa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,21 +17,21 @@ void	index_list(t_stack_node **stack_a)
 	t_stack_node	*temp;
 	t_stack_node	*i;
 	t_stack_node	*res;
-	int		x;
-	
+	int				x;
+
 	x = 0;
 	i = *stack_a;
 	temp = *stack_a;
 	res = temp;
 	while (temp != NULL)
 	{
-		while(i != NULL)
+		while (i != NULL)
 		{
-			if(temp->num > i->num)
+			if (temp->num > i->num)
 				x++;
 			i = i->next;
 		}
-		temp->pos = x+1;
+		temp->pos = x + 1;
 		x = 0;
 		temp = temp->next;
 		i = *stack_a;
