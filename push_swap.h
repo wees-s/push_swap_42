@@ -6,7 +6,7 @@
 /*   By: wedos-sa <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/03 13:44:24 by wedos-sa          #+#    #+#             */
-/*   Updated: 2025/09/16 18:28:48 by wedos-sa         ###   ########.fr       */
+/*   Updated: 2025/09/17 17:56:14 by wedos-sa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,7 @@ typedef struct s_stack_node
 long long int		insert_elem_checker(char *string, char **arr_arr, size_t j);
 int					ft_list_size_int(t_stack_node *begin_list);
 int					size_max_conteiner(t_stack_node *stack_a);
+int					check_list(t_stack_node **stack_a);
 
 /*void type*/
 void				ft_list_push_back_int(t_stack_node **begin_list, int data);
@@ -40,13 +41,13 @@ void				stack_a_organizer(t_stack_node **stack_a);
 void				stack_to_a(t_stack_node **stack_a, t_stack_node **stack_b);
 void				rotate_and_push(t_stack_node **stack_b,
 						t_stack_node **stack_a, int pos);
+void				two_args(t_stack_node **stack_a);
 
 /*struct type*/
 t_stack_node		*start_stack_a(char **stack);
 t_stack_node		*ft_list_last_int(t_stack_node *begin_list);
 t_stack_node		*ft_create_elem_int(int nb);
-t_stack_node		*stack_to_b(t_stack_node **s_a,
-						t_stack_node **s_b, int size_list);
+void				stack_b(t_stack_node **s_a, t_stack_node **s_b, int size, int i);
 
 /*swap functions*/
 void				sa(t_stack_node	**stack_a);

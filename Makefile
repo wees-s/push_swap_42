@@ -12,7 +12,8 @@ SRCS =	push_swap.c 	\
 		rotate.c		\
 		reverse_rotate.c	\
 		stack_index.c	\
-		order_list.c
+		order_list.c	\
+		organizer.c
 
 OBJS = $(SRCS:.c=.o)
 

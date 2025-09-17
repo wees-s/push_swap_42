@@ -6,7 +6,7 @@
 /*   By: wedos-sa <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/03 14:37:19 by wedos-sa          #+#    #+#             */
-/*   Updated: 2025/09/16 17:45:30 by wedos-sa         ###   ########.fr       */
+/*   Updated: 2025/09/17 15:40:12 by wedos-sa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,8 +87,8 @@ static char	**inicial_checker(int argc, char **argv)
 		if (temp == (void *)1)
 			return (argv);
 	}
-	free(temp);
-	free_split(argv);
+	//free(temp);
+	//free_split(argv);
 	return (NULL);
 }
 
