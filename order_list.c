@@ -6,7 +6,7 @@
 /*   By: wedos-sa <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/11 09:59:12 by wedos-sa          #+#    #+#             */
-/*   Updated: 2025/09/17 18:31:27 by wedos-sa         ###   ########.fr       */
+/*   Updated: 2025/09/18 14:44:27 by wedos-sa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,10 +24,14 @@ void	stack_order(t_stack_node **stack_a)
 	if (size_list == 2)
 	{
 		two_args(stack_a);
+		free_stack(*stack_a);
 		exit(EXIT_SUCCESS);
 	}
 	if (check_list(stack_a) == 1)
+	{
 		exit(EXIT_SUCCESS);
+		free_stack(*stack_a);
+	}
 	else
 	{
 		stack_b(stack_a, &s_b, size_list, i);

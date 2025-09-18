@@ -6,7 +6,7 @@
 /*   By: wedos-sa <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/04 14:56:26 by wedos-sa          #+#    #+#             */
-/*   Updated: 2025/09/09 19:05:16 by wedos-sa         ###   ########.fr       */
+/*   Updated: 2025/09/18 16:42:09 by wedos-sa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,7 +57,9 @@ t_stack_node	*start_stack_a(char **stack)
 	long long int		temp;
 	size_t				j;
 
-	stack_a = ft_create_elem_int(ft_atoi(stack[0]));
+	temp = ft_atoi(stack[0]);
+	error_check_num(stack, temp);
+	stack_a = ft_create_elem_int(temp);
 	i = 1;
 	j = 2;
 	while (stack[i])
@@ -66,7 +68,9 @@ t_stack_node	*start_stack_a(char **stack)
 		j++;
 		if (temp > 2147483647 || temp < -2147483648)
 		{
-			ft_printf("Error\n");
+			write(2, "Error\n", 6);
+			free_stack(stack_a);
+			free_split(stack);
 			exit(EXIT_FAILURE);
 		}
 		ft_list_push_back_int(&stack_a, temp);

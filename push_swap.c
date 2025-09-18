@@ -6,7 +6,7 @@
 /*   By: wedos-sa <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/03 14:37:19 by wedos-sa          #+#    #+#             */
-/*   Updated: 2025/09/17 15:40:12 by wedos-sa         ###   ########.fr       */
+/*   Updated: 2025/09/18 16:03:42 by wedos-sa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,9 +86,9 @@ static char	**inicial_checker(int argc, char **argv)
 		temp = stack_checker(argv);
 		if (temp == (void *)1)
 			return (argv);
+		else
+			free_split(argv);
 	}
-	//free(temp);
-	//free_split(argv);
 	return (NULL);
 }
 
@@ -111,30 +111,28 @@ int	main(int argc, char **argv)
 	char			**stack;
 	t_stack_node	*stack_a;
 	int				j;
-	t_stack_node	*head;
 
 	j = 0;
+	if (argc < 2)
+		return (0);
 	stack = inicial_checker(argc, argv);
 	if (stack == NULL)
 	{
 		write(2, "Error\n", 6);
 		return (0);
 	}
-	else
-		stack_a = start_stack_a(stack);
-	head = stack_a;
+	stack_a = start_stack_a(stack);
 	while (j != argc)
 	{
-		if (argv[j][0] == '\0')
+		if (argv[j++][0] == '\0')
 		{
+			free_all(stack, stack_a);
 			write(2, "Error\n", 6);
 			return (0);
 		}
-		j++;
 	}
 	index_list(&stack_a);
-	stack_order(&head);
-	free_stack(stack_a);
-	free_split(stack);
+	stack_order(&stack_a);
+	free_all(stack, stack_a);
 	return (0);
 }
