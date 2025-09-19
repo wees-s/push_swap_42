@@ -6,7 +6,7 @@
 /*   By: wedos-sa <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/03 13:44:24 by wedos-sa          #+#    #+#             */
-/*   Updated: 2025/09/18 16:41:46 by wedos-sa         ###   ########.fr       */
+/*   Updated: 2025/09/19 11:17:15 by wedos-sa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,7 @@ long long int		insert_elem_checker(char *string, char **arr_arr, size_t j);
 int					ft_list_size_int(t_stack_node *begin_list);
 int					size_max_conteiner(t_stack_node *stack_a);
 int					check_list(t_stack_node **stack_a);
+int					argv_checker_free(char **stack, t_stack_node *stack_a);
 
 /*void type*/
 void				ft_list_push_back_int(t_stack_node **begin_list, int data);

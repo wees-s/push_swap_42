@@ -6,7 +6,7 @@
 /*   By: wedos-sa <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/04 17:29:50 by wedos-sa          #+#    #+#             */
-/*   Updated: 2025/09/18 18:11:58 by wedos-sa         ###   ########.fr       */
+/*   Updated: 2025/09/19 11:18:02 by wedos-sa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,4 +64,11 @@ void	error_check_num(char **stack, long long int temp)
 		write(2, "Error\n", 6);
 		exit(EXIT_FAILURE);
 	}
+}
+
+int	argv_checker_free(char **stack, t_stack_node *stack_a)
+{
+	free_all(stack, stack_a);
+	write(2, "Error\n", 6);
+	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: wedos-sa <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/03 14:37:19 by wedos-sa          #+#    #+#             */
-/*   Updated: 2025/09/18 16:03:42 by wedos-sa         ###   ########.fr       */
+/*   Updated: 2025/09/19 11:52:12 by wedos-sa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -116,21 +116,16 @@ int	main(int argc, char **argv)
 	if (argc < 2)
 		return (0);
 	stack = inicial_checker(argc, argv);
-	if (stack == NULL)
+	if (stack == NULL || stack[0] == NULL)
 	{
+		free(stack);
 		write(2, "Error\n", 6);
 		return (0);
 	}
 	stack_a = start_stack_a(stack);
 	while (j != argc)
-	{
 		if (argv[j++][0] == '\0')
-		{
-			free_all(stack, stack_a);
-			write(2, "Error\n", 6);
-			return (0);
-		}
-	}
+			return (argv_checker_free(stack, stack_a));
 	index_list(&stack_a);
 	stack_order(&stack_a);
 	free_all(stack, stack_a);
