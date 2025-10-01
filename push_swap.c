@@ -6,7 +6,7 @@
 /*   By: wedos-sa <wedos-sa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/03 14:37:19 by wedos-sa          #+#    #+#             */
-/*   Updated: 2025/10/01 14:05:37 by wedos-sa         ###   ########.fr       */
+/*   Updated: 2025/10/01 14:17:30 by wedos-sa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,7 +78,7 @@ static char	**inicial_checker(int argc, char **argv)
 		free(to_free);
 	}
 	if (argc == 2 && !argv[1][i])
-		free_split(argv);
+		write(2, "Error\n", 6);
 	else if (argc >= 2)
 	{
 		if (argc == 2)
@@ -113,7 +113,7 @@ int	main(int argc, char **argv)
 	int				j;
 
 	j = 0;
-	if (argc < 2 || (argc == 2 && !argv[1][0]))
+	if (argc < 2)
 		return (0);
 	stack = inicial_checker(argc, argv);
 	if (stack == NULL || stack[0] == NULL)
