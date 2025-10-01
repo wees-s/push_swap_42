@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   order_list.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: wedos-sa <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: wedos-sa <wedos-sa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/11 09:59:12 by wedos-sa          #+#    #+#             */
-/*   Updated: 2025/09/18 14:44:27 by wedos-sa         ###   ########.fr       */
+/*   Updated: 2025/10/01 13:59:10 by wedos-sa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	stack_order(t_stack_node **stack_a)
+int	stack_order(t_stack_node **stack_a)
 {
 	t_stack_node	*s_b;
 	int				size_list;
@@ -24,13 +24,15 @@ void	stack_order(t_stack_node **stack_a)
 	if (size_list == 2)
 	{
 		two_args(stack_a);
-		free_stack(*stack_a);
-		exit(EXIT_SUCCESS);
+		return (1);
+		//free_stack(*stack_a);
+		//exit(EXIT_SUCCESS);
 	}
 	if (check_list(stack_a) == 1)
 	{
-		exit(EXIT_SUCCESS);
-		free_stack(*stack_a);
+		//free_stack(*stack_a);
+		return (1);
+		//exit(EXIT_SUCCESS);
 	}
 	else
 	{
@@ -39,6 +41,7 @@ void	stack_order(t_stack_node **stack_a)
 		while (s_b != NULL)
 			stack_to_a(stack_a, &s_b);
 	}
+	return (0);
 }
 
 int	check_list(t_stack_node **stack_a)

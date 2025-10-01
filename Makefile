@@ -45,7 +45,6 @@ clean:
 fclean: clean
 	rm -f $(NAME)
 	cd ./libft && make fclean
-	rm push_swap
 
 re: fclean all
 

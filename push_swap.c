@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: wedos-sa <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: wedos-sa <wedos-sa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/03 14:37:19 by wedos-sa          #+#    #+#             */
-/*   Updated: 2025/09/19 11:52:12 by wedos-sa         ###   ########.fr       */
+/*   Updated: 2025/10/01 14:05:37 by wedos-sa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,8 +77,8 @@ static char	**inicial_checker(int argc, char **argv)
 		argv = ft_split(to_free, ' ');
 		free(to_free);
 	}
-	if (argc < 2 || (argc == 2 && !argv[1][i]))
-		;
+	if (argc == 2 && !argv[1][i])
+		free_split(argv);
 	else if (argc >= 2)
 	{
 		if (argc == 2)
@@ -113,12 +113,13 @@ int	main(int argc, char **argv)
 	int				j;
 
 	j = 0;
-	if (argc < 2)
+	if (argc < 2 || (argc == 2 && !argv[1][0]))
 		return (0);
 	stack = inicial_checker(argc, argv);
 	if (stack == NULL || stack[0] == NULL)
 	{
-		free(stack);
+		if (stack)
+			free_split(stack);
 		write(2, "Error\n", 6);
 		return (0);
 	}
@@ -127,7 +128,8 @@ int	main(int argc, char **argv)
 		if (argv[j++][0] == '\0')
 			return (argv_checker_free(stack, stack_a));
 	index_list(&stack_a);
-	stack_order(&stack_a);
+	if (stack_order(&stack_a) == 1)
+		;
 	free_all(stack, stack_a);
 	return (0);
 }

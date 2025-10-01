@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: wedos-sa <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: wedos-sa <wedos-sa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/03 13:44:24 by wedos-sa          #+#    #+#             */
-/*   Updated: 2025/09/19 11:17:15 by wedos-sa         ###   ########.fr       */
+/*   Updated: 2025/10/01 13:59:25 by wedos-sa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ void				ft_list_push_back_int(t_stack_node **begin_list, int data);
 void				free_split(char **arr_arr);
 void				free_stack(t_stack_node *stack);
 void				index_list(t_stack_node **stack_a);
-void				stack_order(t_stack_node **stack_a);
+int					stack_order(t_stack_node **stack_a);
 void				stack_a_organizer(t_stack_node **stack_a);
 void				stack_to_a(t_stack_node **stack_a, t_stack_node **stack_b);
 void				rotate_and_push(t_stack_node **stack_b,
