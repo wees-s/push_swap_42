@@ -29,6 +29,8 @@ $(NAME): $(OBJS)
 	@echo "============================="
 	@echo "All $(OBJS) --> $@"
 	ar rcs $@ $(OBJS)
+	cc push_swap.c $(NAME) -o push_swap
+	rm -f $(NAME)
 
 %.o: %.c
 	@echo "============================="
@@ -43,6 +45,7 @@ clean:
 fclean: clean
 	rm -f $(NAME)
 	cd ./libft && make fclean
+	rm push_swap
 
 re: fclean all
 
