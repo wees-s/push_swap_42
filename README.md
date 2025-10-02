@@ -14,7 +14,6 @@ An efficient sorting algorithm using two stacks and a limited set of operations 
 - [Compilation](#compilation)
 - [Testing](#testing)
 - [Performance](#performance)
-- [Bonus - Checker](#bonus---checker)
 - [Author](#author)
 
 ## Description
@@ -31,7 +30,6 @@ The goal is to sort stack a in ascending order with the least number of operatio
 - ✅ Memory-safe implementation with no leaks
 - ✅ Error handling for invalid inputs
 - ✅ Outputs the sequence of operations to sort the stack
-- ✅ Bonus: checker program to verify sorting operations
 
 ## Installation
 
@@ -80,14 +78,6 @@ ARG=$(seq 1 100 | shuf); ./push_swap $ARG | wc -l
 ./push_swap 42 8 15 16 23 4
 ```
 
-### Piping to Checker (if bonus implemented)
-
-```bash
-ARG="3 2 5 1 4"; ./push_swap $ARG | ./checker $ARG
-```
-
-Output: `OK` if sorted correctly, `KO` if not.
-
 ## Operations
 
 The algorithm can only use the following operations:
@@ -97,7 +87,6 @@ The algorithm can only use the following operations:
 |-----------|-------------|--------|
 | `sa` | Swap a | Swap the first 2 elements at the top of stack a |
 | `sb` | Swap b | Swap the first 2 elements at the top of stack b |
-| `ss` | Swap both | `sa` and `sb` at the same time |
 
 ### Push Operations
 | Operation | Description | Effect |
@@ -110,14 +99,12 @@ The algorithm can only use the following operations:
 |-----------|-------------|--------|
 | `ra` | Rotate a | Shift up all elements of stack a by 1 (first becomes last) |
 | `rb` | Rotate b | Shift up all elements of stack b by 1 |
-| `rr` | Rotate both | `ra` and `rb` at the same time |
 
 ### Reverse Rotate Operations
 | Operation | Description | Effect |
 |-----------|-------------|--------|
 | `rra` | Reverse rotate a | Shift down all elements of stack a by 1 (last becomes first) |
 | `rrb` | Reverse rotate b | Shift down all elements of stack b by 1 |
-| `rrr` | Reverse rotate both | `rra` and `rrb` at the same time |
 
 ## Algorithm
 
@@ -178,8 +165,6 @@ push_swap/
 │       └── ft_atoi.c        # String to integer conversion
 ├── includes/
 │   └── push_swap.h          # Header with prototypes and structs
-├── bonus/
-│   └── checker.c            # Bonus: operation checker
 ├── Makefile                 # Compilation rules
 └── README.md               # This file
 ```
@@ -189,7 +174,6 @@ push_swap/
 The project uses a Makefile with the following targets:
 
 - `make` or `make all`: Compiles the push_swap program
-- `make bonus`: Compiles the checker program (bonus)
 - `make clean`: Removes object files
 - `make fclean`: Removes object files and executables
 - `make re`: Performs fclean followed by all
@@ -289,84 +273,7 @@ done
 ### Optimization Techniques
 1. **Chunk-based sorting**: Reduces operations by grouping elements
 2. **Cost calculation**: Chooses most efficient moves
-3. **Combined operations**: Uses `rr`, `rrr`, `ss` when possible
-4. **Pre-indexing**: Converts values to indices for easier manipulation
-
-## Bonus - Checker
-
-The checker program verifies if a sequence of operations correctly sorts the stack.
-
-### Usage
-
-```bash
-./checker [list of integers]
-```
-
-Then input operations (one per line), followed by Ctrl+D:
-
-```bash
-./checker 3 2 1
-sa
-pb
-pa
-^D
-OK
-```
-
-Or pipe from push_swap:
-
-```bash
-ARG="3 2 1"; ./push_swap $ARG | ./checker $ARG
-OK
-```
-
-### Implementation
-
-The checker:
-1. Reads the list of integers
-2. Reads operations from stdin
-3. Executes each operation on the stacks
-4. Verifies if stack a is sorted and stack b is empty
-5. Outputs `OK` or `KO`
-
-## Key Concepts
-
-### Data Structure
-The project typically uses a **doubly linked list** to implement the stacks, allowing efficient operations at both ends.
-
-```c
-typedef struct s_stack
-{
-    int value;
-    int index;
-    struct s_stack *next;
-    struct s_stack *prev;
-} t_stack;
-```
-
-### Algorithm Strategy
-1. **Simplification**: Convert values to indices (0 to n-1)
-2. **Partitioning**: Divide into chunks for efficient sorting
-3. **Cost analysis**: Calculate and minimize operation costs
-4. **Optimization**: Combine operations when possible
-
-### Common Approaches
-- **Radix Sort adaptation**: Using binary representation
-- **Chunk/Partition method**: Dividing into sorted segments
-- **Greedy algorithm**: Always choosing lowest-cost move
-- **Hybrid approach**: Different strategies for different sizes
-
-## Error Handling
-
-The program handles the following error cases:
-
-- ❌ Non-numeric arguments
-- ❌ Numbers outside integer range (overflow)
-- ❌ Duplicate numbers
-- ❌ Invalid input format
-- ❌ Memory allocation failures
-
-On error, the program outputs `Error\n` to stderr and exits.
+3. **Pre-indexing**: Converts values to indices for easier manipulation
 
 ## Author
 
