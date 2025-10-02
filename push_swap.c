@@ -6,7 +6,7 @@
 /*   By: wedos-sa <wedos-sa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/03 14:37:19 by wedos-sa          #+#    #+#             */
-/*   Updated: 2025/10/01 14:17:30 by wedos-sa         ###   ########.fr       */
+/*   Updated: 2025/10/02 10:58:37 by wedos-sa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,6 +53,12 @@ static char	*join_args(int argc, char **argv)
 	i = 1;
 	while (i < argc)
 	{
+		if (ft_all_space(argv[i]) == 0)
+		{
+			write(2, "Error\n", 6);
+			free(temp_res);
+			exit(EXIT_FAILURE);
+		}
 		res = ft_strjoin(argv[i], " ");
 		to_free = temp_res;
 		temp_res = ft_strjoin(to_free, res);
@@ -78,7 +84,7 @@ static char	**inicial_checker(int argc, char **argv)
 		free(to_free);
 	}
 	if (argc == 2 && !argv[1][i])
-		write(2, "Error\n", 6);
+		;
 	else if (argc >= 2)
 	{
 		if (argc == 2)

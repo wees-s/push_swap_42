@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: wedos-sa <marvin@42.fr>                    +#+  +:+       +#+         #
+#    By: wedos-sa <wedos-sa@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/07/15 11:17:28 by wedos-sa          #+#    #+#              #
-#    Updated: 2025/09/02 15:16:20 by wedos-sa         ###   ########.fr        #
+#    Updated: 2025/10/01 14:35:11 by wedos-sa         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -59,7 +59,8 @@ SRCS =	ft_atoi.c			\
 	ft_print_utils.c		\
 	ft_printf.c				\
 	ft_print_address_i.c	\
-	ft_print_hex.c
+	ft_print_hex.c			\
+	ft_all_space.c
 
 OBJS = $(SRCS:.c=.o)
 

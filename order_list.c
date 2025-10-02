@@ -6,7 +6,7 @@
 /*   By: wedos-sa <wedos-sa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/11 09:59:12 by wedos-sa          #+#    #+#             */
-/*   Updated: 2025/10/01 13:59:10 by wedos-sa         ###   ########.fr       */
+/*   Updated: 2025/10/01 17:00:44 by wedos-sa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,14 +25,10 @@ int	stack_order(t_stack_node **stack_a)
 	{
 		two_args(stack_a);
 		return (1);
-		//free_stack(*stack_a);
-		//exit(EXIT_SUCCESS);
 	}
 	if (check_list(stack_a) == 1)
 	{
-		//free_stack(*stack_a);
 		return (1);
-		//exit(EXIT_SUCCESS);
 	}
 	else
 	{

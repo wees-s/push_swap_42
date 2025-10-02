@@ -1,5 +1,7 @@
 NAME = push_swap.a
 
+PROGRAM_NAME = push_swap
+
 CC = cc
 
 CFLAGS = -Wall -Wextra -Werror
@@ -30,7 +32,6 @@ $(NAME): $(OBJS)
 	@echo "All $(OBJS) --> $@"
 	ar rcs $@ $(OBJS)
 	cc push_swap.c $(NAME) -o push_swap
-	rm -f $(NAME)
 
 %.o: %.c
 	@echo "============================="
@@ -44,6 +45,7 @@ clean:
 
 fclean: clean
 	rm -f $(NAME)
+	rm -f $(PROGRAM_NAME)
 	cd ./libft && make fclean
 
 re: fclean all

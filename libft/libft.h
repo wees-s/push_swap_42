@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: wedos-sa <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: wedos-sa <wedos-sa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/15 11:35:44 by wedos-sa          #+#    #+#             */
-/*   Updated: 2025/09/09 17:57:41 by wedos-sa         ###   ########.fr       */
+/*   Updated: 2025/10/01 14:35:32 by wedos-sa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,7 @@ int				ft_tolower(int ch);
 int				ft_strncmp(const char *string1, const char *string2,
 					size_t count);
 int				ft_memcmp(const void *s1, const void *s2, size_t n);
+int				ft_all_space(char *str);
 long long int	ft_atoi(const char *string);
 
 char			*ft_strdup(const char *s1);
